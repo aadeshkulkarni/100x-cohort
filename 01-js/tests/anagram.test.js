@@ -5,7 +5,7 @@ describe('isAnagram', () => {
 		expect(isAnagram('listen', 'silent')).toBe(true);
 		expect(isAnagram('rail safety', 'fairy tales')).toBe(
 			true
-		);
+		);	
 		expect(isAnagram('openai', 'aiopen')).toBe(true);
 		expect(isAnagram('', '')).toBe(true);
 	});

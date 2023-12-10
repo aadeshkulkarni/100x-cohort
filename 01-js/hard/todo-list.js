@@ -11,6 +11,32 @@
 */
 
 class Todo {
+  list = []
+  add = function(task){
+    this.list.push(task)
+  }
+  remove = function(index){
+    if(index < this.list.length){
+      this.list = this.list.filter((t,i)=>i!==index)
+    }
+  }
+  update = function(index, updatedToDo){
+    if(index < this.list.length){
+      this.list[index] = updatedToDo
+    }
+  }
+  getAll = function(){
+    return this.list
+  }
+  get = function(index){
+    if(index < this.list.length){
+      return this.list[index]
+    }
+    return null
+  }
+  clear = function(){
+    this.list.length = 0
+  }
 
 }
 

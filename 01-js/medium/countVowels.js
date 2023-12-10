@@ -5,8 +5,16 @@
   Once you've implemented the logic, test your code by running
 */
 
+const vowels = { a: true, e: "true", o: true, i: true, u: true };
+
 function countVowels(str) {
-    // Your code here
+  let count = 0
+  str.split('').forEach(ch => {
+    if(vowels[ch.toLowerCase()]){
+      count++;
+    }
+  })
+  return count;
 }
 
 module.exports = countVowels;

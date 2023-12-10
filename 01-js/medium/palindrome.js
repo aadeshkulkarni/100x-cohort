@@ -4,7 +4,15 @@
 */
 
 function isPalindrome(str) {
+  let input = str.toLowerCase().replace(/[.,\/#!$%\^&\*;:?{}=\-_`~() ]/g,"")
+  console.log(input)
+  for(let i=0,j=input.length-1;i<j;i++,j--){
+    if(input[i] !== input[j]){
+      return false;
+    }
+  }
   return true;
 }
 
+// console.log(isPalindrome("Eva, can I see bees in a cave?"))
 module.exports = isPalindrome;

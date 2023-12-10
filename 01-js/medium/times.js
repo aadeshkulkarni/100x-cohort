@@ -7,7 +7,21 @@ Try running it for
 Hint - use Date class exposed in JS
 There is no automated test for this one, this is more for you to understand time goes up as computation goes up
 */
+const { performance } = require('perf_hooks');
 
 function calculateTime(n) {
-    return 0.01;
+    var startTime = performance.now()
+    let sum = 0
+    for(let i=1;i<=n;i++){
+        sum = sum + i
+    }
+    var endTime = performance.now()
+    return Math.round(((endTime - startTime)/100),5);
 }
+
+
+console.log("1 to 100: ",calculateTime(100))
+console.log("1 to 10000: ",calculateTime(10000))
+console.log("1 to 1000000: ",calculateTime(1000000))
+console.log("1 to 100000000: ",calculateTime(100000000))
+console.log("1 to 10000000000: ",calculateTime(10000000000))
